@@ -3,6 +3,7 @@ package com.alexsimo.delightfulpersistence.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import com.alexsimo.delightfulpersistence.database.model.AuthorModel;
 import com.alexsimo.delightfulpersistence.database.model.BookModel;
 import com.alexsimo.delightfulpersistence.database.populator.AuthorPopulator;
