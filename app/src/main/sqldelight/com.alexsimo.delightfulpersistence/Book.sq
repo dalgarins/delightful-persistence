@@ -1,0 +1,7 @@
+CREATE TABLE book (
+  _id LONG NOT NULL PRIMARY KEY AUTOINCREMENT,
+  isbn STRING NOT NULL,
+  title STRING NOT NULL,
+  description STRING NOT NULL,
+  release_year CLASS('java.util.Calendar')
+);

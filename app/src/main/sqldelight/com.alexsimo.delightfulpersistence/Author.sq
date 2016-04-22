@@ -1,0 +1,5 @@
+CREATE TABLE author (
+  _id LONG PRIMARY KEY AUTOINCREMENT,
+  name STRING NOT NULL,
+  birth_year CLASS('java.util.Calendar')
+);
