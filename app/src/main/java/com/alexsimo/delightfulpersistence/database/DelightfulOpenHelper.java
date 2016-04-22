@@ -3,8 +3,8 @@ package com.alexsimo.delightfulpersistence.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.alexsimo.delightfulpersistence.AuthorModel;
-import com.alexsimo.delightfulpersistence.BookModel;
+import com.alexsimo.delightfulpersistence.database.model.AuthorModel;
+import com.alexsimo.delightfulpersistence.database.model.BookModel;
 
 public class DelightfulOpenHelper extends SQLiteOpenHelper {
 

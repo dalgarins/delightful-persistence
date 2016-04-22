@@ -5,7 +5,7 @@ import android.database.Cursor;
 import com.squareup.sqldelight.ColumnAdapter;
 import java.util.Calendar;
 
-public class CalendarAdapter implements ColumnAdapter<Calendar> {
+public class DateAdapter implements ColumnAdapter<Calendar> {
 
   @Override
   public Calendar map(Cursor cursor, int columnIndex) {
