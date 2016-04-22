@@ -2,7 +2,6 @@ package com.alexsimo.delightfulpersistence.database.model;
 
 import com.alexsimo.delightfulpersistence.database.adapter.DateAdapter;
 import com.google.auto.value.AutoValue;
-import com.squareup.sqldelight.ColumnAdapter;
 import java.util.Calendar;
 
 @AutoValue public abstract class Author implements AuthorModel {
@@ -18,7 +17,7 @@ import java.util.Calendar;
 
   public static final class Marshal extends AuthorMarshal<Marshal> {
 
-    public Marshal(ColumnAdapter<Calendar> birth_yearAdapter) {
+    public Marshal() {
       super(DATE_ADAPTER);
     }
   }

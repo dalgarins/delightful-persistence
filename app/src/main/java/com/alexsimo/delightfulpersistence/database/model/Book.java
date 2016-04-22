@@ -2,7 +2,6 @@ package com.alexsimo.delightfulpersistence.database.model;
 
 import com.alexsimo.delightfulpersistence.database.adapter.DateAdapter;
 import com.google.auto.value.AutoValue;
-import com.squareup.sqldelight.ColumnAdapter;
 import java.util.Calendar;
 
 @AutoValue public abstract class Book implements BookModel {
@@ -19,7 +18,7 @@ import java.util.Calendar;
 
   public static final class Marshal extends BookMarshal<Marshal> {
 
-    public Marshal(ColumnAdapter<Calendar> release_yearAdapter) {
+    public Marshal() {
       super(DATE_ADAPTER);
     }
   }
