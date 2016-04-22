@@ -10,9 +10,8 @@ import java.util.Calendar;
 
   private final static Mapper<Book> MAPPER = new Mapper<>(new Mapper.Creator<Book>() {
     @Override
-    public Book create(long _id, String isbn, String title, String description,
-        Calendar release_year) {
-      return new AutoValue_Book(_id, isbn, title, description, release_year);
+    public Book create(long _id, String isbn, String title, Calendar release_year) {
+      return new AutoValue_Book(_id, isbn, title, release_year);
     }
   }, DATE_ADAPTER);
 
