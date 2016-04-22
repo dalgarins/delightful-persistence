@@ -1,4 +1,6 @@
 package com.alexsimo.delightfulpersistence;
 
-public abstract class Book implements BookModel {
+import com.google.auto.value.AutoValue;
+
+@AutoValue public abstract class Book implements BookModel {
 }
