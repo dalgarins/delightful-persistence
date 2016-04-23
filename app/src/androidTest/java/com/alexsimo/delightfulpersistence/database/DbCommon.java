@@ -11,5 +11,7 @@ public class DbCommon {
 
   public static SQLiteDatabase givenWritableDatabase(Context context) {
     return DelightfulOpenHelper.getInstance(context).getWritableDatabase();
+    /*DatabaseManager.initialize(DelightfulOpenHelper.getInstance(context));
+    return DatabaseManager.getInstance().openDatabase();*/
   }
 }
