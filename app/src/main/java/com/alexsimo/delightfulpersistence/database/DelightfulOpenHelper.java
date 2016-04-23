@@ -3,7 +3,6 @@ package com.alexsimo.delightfulpersistence.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 import com.alexsimo.delightfulpersistence.database.model.AuthorModel;
 import com.alexsimo.delightfulpersistence.database.model.BookModel;
 import com.alexsimo.delightfulpersistence.database.populator.AuthorPopulator;
@@ -11,8 +10,8 @@ import com.alexsimo.delightfulpersistence.database.populator.BookPopulator;
 
 public class DelightfulOpenHelper extends SQLiteOpenHelper {
 
-  private static final String DB_NAME = "delightful.db";
-  private static final int DB_VERSION = 1;
+  public static final String DB_NAME = "delightful.db";
+  public static final int DB_VERSION = 1;
 
   private static DelightfulOpenHelper instance;
 
