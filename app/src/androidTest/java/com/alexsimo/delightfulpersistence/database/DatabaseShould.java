@@ -18,7 +18,7 @@ public class DatabaseShould extends CustomRunner {
   @Before
   public void setUp() throws Exception {
     super.setUp();
-    deleteDatabase();
+    DbCommon.deleteDatabase(context);
   }
 
   @Test
@@ -45,12 +45,8 @@ public class DatabaseShould extends CustomRunner {
     assertTrue(tables.isEmpty());
   }
 
-  private void deleteDatabase() {
-    context.deleteDatabase(DelightfulOpenHelper.DB_NAME);
-  }
-
   private SQLiteDatabase givenWritableDatabase() {
-    return DelightfulOpenHelper.getInstance(context).getWritableDatabase();
+    return DbCommon.givenWritableDatabase(context);
   }
 
   private HashSet<String> givenAllTables() {
