@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import com.alexsimo.delightfulpersistence.database.model.AuthorModel;
+import com.alexsimo.delightfulpersistence.database.model.BookAuthorModel;
 import com.alexsimo.delightfulpersistence.database.model.BookModel;
 import com.alexsimo.delightfulpersistence.database.populator.AuthorPopulator;
 import com.alexsimo.delightfulpersistence.database.populator.BookPopulator;
@@ -30,6 +31,7 @@ public class DelightfulOpenHelper extends SQLiteOpenHelper {
   public void onCreate(SQLiteDatabase db) {
     db.execSQL(BookModel.CREATE_TABLE);
     db.execSQL(AuthorModel.CREATE_TABLE);
+    db.execSQL(BookAuthorModel.CREATE_TABLE);
     populate(db);
   }
 
