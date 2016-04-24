@@ -2,7 +2,6 @@ package com.alexsimo.delightfulpersistence.database;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.alexsimo.delightfulpersistence.database.model.AuthorModel;
 import com.alexsimo.delightfulpersistence.database.model.BookAuthorModel;
 import com.alexsimo.delightfulpersistence.runner.CustomRunner;
 import java.util.HashSet;

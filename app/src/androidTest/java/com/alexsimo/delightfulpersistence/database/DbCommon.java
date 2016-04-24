@@ -9,9 +9,21 @@ public class DbCommon {
     context.deleteDatabase(DelightfulOpenHelper.DB_NAME);
   }
 
+  public static void closeDatabase() {
+    DatabaseManager.getInstance().closeDatabase();
+  }
+
+  public static void initializeDatabase(Context context) {
+    DatabaseManager.initialize(DelightfulOpenHelper.getInstance(context));
+  }
+
+  public static SQLiteDatabase getOpenedDatabase() {
+    return DatabaseManager.getInstance().openDatabase();
+  }
+
   public static SQLiteDatabase givenWritableDatabase(Context context) {
     return DelightfulOpenHelper.getInstance(context).getWritableDatabase();
-    /*DatabaseManager.initialize(DelightfulOpenHelper.getInstance(context));
-    return DatabaseManager.getInstance().openDatabase();*/
+    /*DatabaseManager.initialize(DelightfulOpenHelper.getInstance(context));*/
+    //return DatabaseManager.getInstance().openDatabase();
   }
 }
