@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.alexsimo.delightfulpersistence.database.model.AuthorModel;
 import com.alexsimo.delightfulpersistence.database.model.BookAuthorModel;
 import com.alexsimo.delightfulpersistence.database.model.BookModel;
+import com.alexsimo.delightfulpersistence.database.model.Migration_v1Model;
 import com.alexsimo.delightfulpersistence.database.populator.AuthorPopulator;
 import com.alexsimo.delightfulpersistence.database.populator.BookPopulator;
 
@@ -42,6 +43,8 @@ public class DelightfulOpenHelper extends SQLiteOpenHelper {
 
   @Override
   public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+    if (oldVersion < 2) {
+      db.execSQL(Migration_v1Model.MIGRATE_AUTHOR);
+    }
   }
 }
