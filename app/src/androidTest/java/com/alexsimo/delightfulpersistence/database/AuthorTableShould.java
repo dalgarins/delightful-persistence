@@ -2,12 +2,14 @@ package com.alexsimo.delightfulpersistence.database;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import com.alexsimo.delightfulpersistence.database.model.Author;
 import com.alexsimo.delightfulpersistence.database.model.AuthorModel;
 import com.alexsimo.delightfulpersistence.runner.CustomRunner;
 import java.util.HashSet;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class AuthorTableShould extends CustomRunner {
@@ -34,6 +36,27 @@ public class AuthorTableShould extends CustomRunner {
     assertTrue(columns.isEmpty());
     cursor.close();
     db.close();
+  }
+
+  @Test
+  public void be_able_to_return_cursor_with_all_default_authors() throws Exception {
+    SQLiteDatabase db = givenWritableDatabase();
+
+    Cursor cursor = db.rawQuery(AuthorModel.SELECT_ALL, new String[0]);
+
+    int AUTHOR_COUNT = 5;
+    assertTrue(cursor.getCount() == AUTHOR_COUNT);
+  }
+
+  @Test
+  public void map_cursor_with_domain_model() throws Exception {
+    SQLiteDatabase db = givenWritableDatabase();
+
+    Cursor cursor = db.rawQuery(AuthorModel.SELECT_ALL, new String[0]);
+    cursor.moveToFirst();
+
+    Author author = Author.MAPPER.map(cursor);
+    assertNotNull(author);
   }
 
   private SQLiteDatabase givenWritableDatabase() {

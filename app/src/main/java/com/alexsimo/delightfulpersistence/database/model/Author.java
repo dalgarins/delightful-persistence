@@ -7,7 +7,7 @@ import com.google.auto.value.AutoValue;
 
   private final static DateAdapter DATE_ADAPTER = new DateAdapter();
 
-  private final static Mapper<Author> MAPPER =
+  public final static Mapper<Author> MAPPER =
       new Mapper<>((Mapper.Creator<Author>) AutoValue_Author::new, DATE_ADAPTER);
 
   public static final class Marshal extends AuthorMarshal<Marshal> {

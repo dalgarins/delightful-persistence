@@ -8,7 +8,7 @@ import java.util.Calendar;
 
   private final static DateAdapter DATE_ADAPTER = new DateAdapter();
 
-  private final static Mapper<Book> MAPPER =
+  public final static Mapper<Book> MAPPER =
       new Mapper<>((Mapper.Creator<Book>) AutoValue_Book::new, DATE_ADAPTER);
 
   public static final class Marshal extends BookMarshal<Marshal> {
