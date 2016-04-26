@@ -8,12 +8,8 @@ import java.util.Calendar;
 
   private final static DateAdapter DATE_ADAPTER = new DateAdapter();
 
-  private final static Mapper<Book> MAPPER = new Mapper<>(new Mapper.Creator<Book>() {
-    @Override
-    public Book create(long _id, String isbn, String title, Calendar release_year) {
-      return new AutoValue_Book(_id, isbn, title, release_year);
-    }
-  }, DATE_ADAPTER);
+  private final static Mapper<Book> MAPPER =
+      new Mapper<>((Mapper.Creator<Book>) AutoValue_Book::new, DATE_ADAPTER);
 
   public static final class Marshal extends BookMarshal<Marshal> {
 
